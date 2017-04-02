@@ -2,10 +2,10 @@
   "name": "power-bar",
   "main": "./lib/power-bar",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "State of art battery level indicator",
   "keywords": [
   ],
-  "repository": "https://github.com/atom/power-bar",
+  "repository": "https://github.com/tuomashatakka/power-bar",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
