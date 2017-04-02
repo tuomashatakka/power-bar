@@ -5,54 +5,64 @@
 
 
 .level-display {
-  display: block;
-  position: relative;
-  height: @bar-size;
-  line-height: @bar-size;
+  overflow:       visible !important;
+  position:       relative;
+  display:        block;
+  height:         @bar-size;
+  line-height:    @bar-size;
+  z-index:        2000;
+  border-style:   solid;
+  border-color:   @base-border-color;
+  background:     darken(@base-background-color, 3%);
 
-  atom-panel.header &, atom-panel.top & {
-    border-width: 0 0 1px }
-
-  atom-panel.bottom &, atom-panel.footer & {
-    border-width: 1px 0 0 }
-  border-style: solid;
-  border-color: @base-border-color;
+  atom-panel.header &, atom-panel.top & { border-width: 0 0 1px }
+  atom-panel.bottom &, atom-panel.footer & { border-width: 1px 0 0 }
 
   .battery-level {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    padding: 0;
-    max-width: 100%;
-    opacity: 0.75;
+    position:   absolute;
+    top:        0;
+    left:       0;
+    bottom:     0;
+    padding:    0;
+    max-width:  100%;
+    opacity:    0.75;
     mix-blend-mode: screen;
+    border-radius: 1.5px;
+    -webkit-font-smoothing: subpixel-antialiased;
     transition: @bar-animation-duration all;
+    box-shadow: 1px 2px 30px rgba(0, 0, 0, 0.6);
     background-color: @background-color-info;
-    background-image: linear-gradient(90deg,
+    background-image: linear-gradient(84deg,
       @background-color-error 0, // #f06060 0,
       @background-color-warning 5vw, // #4caf83 15vw,
       @background-color-info 40vw,
-      @background-color-success 100vw
-      );
-  }
+      @background-color-success 100vw) }
+
   .battery-level-label {
     text-align: right;
     color: inherit;
     line-height: auto;
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    right: 1%;
-    top: 40%;
+    right: 0;
+    top: 0;
     font-size: @bar-size * 3;
-  }
+    width: 4em;
+    text-align: center;
+    height: 1.5em;
+    line-height: 1.5em;
+    box-shadow: -1px 2px 6px rgba(0, 0, 0, 0.05);
+    padding: @component-padding;
+    background: @inset-panel-background-color;
+    box-sizing: content-box;
+    margin: 0;
+    border-radius: 0 0 0px @component-border-radius }
+
   &.charging .battery-level-label {
     .octicon(zap);
     &::before {
       margin-right: 0.5em;
       line-height: inherit;
-      height: inherit;
-      font-size: inherit;
-    }
-  }
-}
+      height:      inherit;
+      font-size:   inherit;
+      width:       auto }}}
