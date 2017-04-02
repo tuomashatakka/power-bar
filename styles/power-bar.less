@@ -39,12 +39,12 @@
   .battery-level-label {
     text-align: right;
     color: inherit;
-    line-height: inherit;
+    line-height: auto;
     position: absolute;
     z-index: 1;
     right: 1%;
-    top: 0;
-    font-size: @bar-size;
+    top: 40%;
+    font-size: @bar-size * 3;
   }
   &.charging .battery-level-label {
     .octicon(zap);
