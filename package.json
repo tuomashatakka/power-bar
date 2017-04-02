@@ -1,0 +1,50 @@
+{
+  "name": "power-bar",
+  "main": "./lib/power-bar",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [
+  ],
+  "repository": "https://github.com/atom/power-bar",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  },
+  "configSchema": {
+    "height": {
+      "title": "Bar height",
+      "default": 6,
+      "minimum": 1,
+      "maximum": 32,
+      "type": "number"
+    },
+    "colors": {
+      "title": "Bar coloring",
+      "type": "object",
+      "properties": {
+        "low": {
+          "title": "Low battery color",
+          "default": "#af4c4c",
+          "type": "color"
+        },
+        "mid": {
+          "title": "Battery warning",
+          "default": "#af4c4c",
+          "type": "color"
+        },
+        "main": {
+          "title": "Plenty o' battery",
+          "default": "#af4c4c",
+          "type": "color"
+        },
+        "high": {
+          "title": "Full battery color",
+          "default": "#af4c4c",
+          "type": "color"
+        }
+      }
+    }
+  }
+}

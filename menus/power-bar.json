@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle power-bar",
+        "command": "power-bar:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "power-bar",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "power-bar:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

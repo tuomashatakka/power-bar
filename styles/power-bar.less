@@ -1,0 +1,58 @@
+@import "ui-variables";
+@import "octicons";
+@bar-size: 4px;
+@bar-animation-duration: 1500ms;
+
+
+.level-display {
+  display: block;
+  position: relative;
+  height: @bar-size;
+  line-height: @bar-size;
+
+  atom-panel.header &, atom-panel.top & {
+    border-width: 0 0 1px }
+
+  atom-panel.bottom &, atom-panel.footer & {
+    border-width: 1px 0 0 }
+  border-style: solid;
+  border-color: @base-border-color;
+
+  .battery-level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    max-width: 100%;
+    opacity: 0.75;
+    mix-blend-mode: screen;
+    transition: @bar-animation-duration all;
+    background-color: @background-color-info;
+    background-image: linear-gradient(90deg,
+      @background-color-error 0, // #f06060 0,
+      @background-color-warning 5vw, // #4caf83 15vw,
+      @background-color-info 40vw,
+      @background-color-success 100vw
+      );
+  }
+  .battery-level-label {
+    text-align: right;
+    color: inherit;
+    line-height: inherit;
+    position: absolute;
+    z-index: 1;
+    right: 1%;
+    top: 0;
+    font-size: @bar-size;
+  }
+  &.charging .battery-level-label {
+    .octicon(zap);
+    &::before {
+      margin-right: 0.5em;
+      line-height: inherit;
+      height: inherit;
+      font-size: inherit;
+    }
+  }
+}
