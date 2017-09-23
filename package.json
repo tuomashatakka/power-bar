@@ -60,6 +60,17 @@
           "type": "color"
         }
       }
+    },
+    "visible": {
+      "title": "Show power level",
+      "type": "boolean",
+      "default": true
+    },
+    "label-visible": {
+      "title": "Show label",
+      "description": "Show numeral label for power level",
+      "type": "boolean",
+      "default": true
     }
   },
   "eslintConfig": {
