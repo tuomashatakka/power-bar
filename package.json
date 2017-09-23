@@ -2,7 +2,7 @@
   "name": "power-bar",
   "main": "./lib/power-bar",
   "author": "tuomashatakka",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "State of art battery level indicator",
   "keywords": [],
   "repository": "https://github.com/tuomashatakka/power-bar",
